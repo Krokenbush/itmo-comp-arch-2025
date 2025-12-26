@@ -9,19 +9,18 @@ module riscv_cpu(clk, pc, pc_new, instruction_memory_a, instruction_memory_rd, d
   // we для памяти данных
   output reg data_memory_we;
   // адреса памяти и данные для записи памяти данных
-  output reg  [31:0] instruction_memory_a, data_memory_a, data_memory_wd;
+  output reg [31:0] instruction_memory_a, data_memory_a, data_memory_wd;
   // данные, полученные в результате чтения из памяти
-  inout reg  [31:0] instruction_memory_rd, data_memory_rd;
+  inout [31:0] instruction_memory_rd, data_memory_rd;
   // we3 для регистрового файла
-  output reg  register_we3;
+  output reg register_we3;
   // номера регистров
-  output reg  [4:0] register_a1, register_a2, register_a3;
+  output reg [4:0] register_a1, register_a2, register_a3;
   // данные для записи в регистровый файл
-  output reg  [31:0] register_wd3;
+  output reg [31:0] register_wd3;
   // данные, полученные в результате чтения из регистрового файла
   inout [31:0] register_rd1, register_rd2;
 
-  // TODO: implementation
   always @(*) begin
       instruction_memory_a = pc;
   end
